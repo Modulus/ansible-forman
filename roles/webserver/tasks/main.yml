@@ -3,7 +3,7 @@
     apt: name="nginx" state=present
 
   - name: Copy foreman nginx configure
-    template: src="foreman.nginx.j2" dest="{{nginx_foreman_file}}"
+    template: src="foreman.nginx.j2" dest="{{nginx_sites_available}}/{{nginx_foreman_file}}"
 
   - name: Remove default nginx sites links
     file:
@@ -12,13 +12,14 @@
 
   - name: Remove default nginx sites
     file:
-      path: "{{nginx_sites_enabled}}default"
+      path: "{{nginx_sites_enabled}}/default"
       state: absent
 
   - name: Enable foreman site
     file:
-      src: "{{nginx_foreman_file}}"
-      dest: "{{nginx_foreman_file}}"
+      src: "{{nginx_sites_available}}/{{nginx_foreman_file}}"
+      dest: "{{nginx_sites_enabled}}/{{nginx_foreman_file}}"
+      state: link
 
   - name: Restart nginx with new config
     service:

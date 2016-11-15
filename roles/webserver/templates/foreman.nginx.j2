@@ -4,6 +4,6 @@ server {
   server_name localhost;
 
   location / {
-    proxy_pass http://{{ip}}:{{port}}
+    proxy_pass http://{{ip}}:{{port}};
   }
 }
