@@ -17,6 +17,8 @@ Vagrant.configure("2") do |config|
         #machine.vm.hostname = "192.168.89.#{20+machine_id}"
         machine.vm.box = "ubuntu/trusty64"
         machine.vm.network "private_network", ip: "192.168.89.#{20+machine_id}"
+        machine.vm.network "forwarded_port", guest: 9191, host: 9191, auto_correct: true
+        machine.vm.network "forwarded_port", guest: 8031, host: 8031, auto_correct: true
         machine.vm.provider :virtualbox do |vb|
           vb.memory = 4096
         end

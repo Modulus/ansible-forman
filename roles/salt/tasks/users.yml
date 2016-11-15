@@ -3,5 +3,6 @@
     user:
       createhome: yes
       name: "{{api_user}}"
+      group: "{{api_user}}"
       password: "{{api_user_pass}}"
       state: present
