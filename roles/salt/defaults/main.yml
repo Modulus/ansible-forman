@@ -3,3 +3,5 @@ ssl_key: salt.key
 ssl_cert: salt.crt
 minion_config_file: /etc/salt/minion
 master_config_folder: /etc/salt/master.d
+api_user: bob
+api_user_pass: $6$yti81KDE9DlMlB8$Lyr.6oqIPdiWozglJKaXtK2X4EXS44wHmVqKSCH1UWXeSxQnv0C0Id89T2HDlIldBVqBKv78suHj3OdLPyopz.

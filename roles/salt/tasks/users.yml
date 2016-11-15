@@ -1,0 +1,7 @@
+---
+  - name: Add salt-api user
+    user:
+      createhome: yes
+      name: "{{api_user}}"
+      password: "{{api_user_pass}}"
+      state: present

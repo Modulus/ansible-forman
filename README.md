@@ -16,3 +16,11 @@ Access 192.168.89.21:8031 for foreman dashboard
 5. cd into ansible-forman
 6. change inventory folder in ansible.cfg
 7. ansible-playbook playbook.yml
+
+
+## Verify salt-api:
+curl -sSk https://localhost:9191/login \
+    -H 'Accept: application/x-yaml' \
+    -d username=bob \
+    -d password=bob \
+    -d eauth=auto

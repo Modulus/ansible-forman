@@ -1,5 +1,6 @@
 ---
-
+  - include: users.yml
+  
   - name: Ensure key for saltstack is present
     apt_key: url="https://repo.saltstack.com/apt/ubuntu/{{ansible_distribution_version}}/amd64/latest/SALTSTACK-GPG-KEY.pub" state=present
 
