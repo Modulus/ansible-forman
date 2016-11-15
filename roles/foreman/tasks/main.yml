@@ -33,6 +33,3 @@
 
   - name: Run the foreman installer
     command: foreman-installer #--enable-foreman-plugin-salt --enable-foreman-proxy-plugin-salt
-    register: foreman-installer-facts
-
-  - debug: msg="{{foreman-installer-facts}}"
