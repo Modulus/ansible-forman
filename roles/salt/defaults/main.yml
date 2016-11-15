@@ -1,0 +1,5 @@
+ssl_dir: /var/ssl
+ssl_key: salt.key
+ssl_cert: salt.crt
+minion_config_file: /etc/salt/minion
+master_config_folder: /etc/salt/master.d

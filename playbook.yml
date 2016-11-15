@@ -5,5 +5,6 @@
     connection: local
     become: yes
     roles:
-      - foreman
-      - webserver
+      #- foreman
+      #- webserver
+      - salt
