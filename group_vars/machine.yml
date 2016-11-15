@@ -1,0 +1,3 @@
+swarm_manager_ip_file: /var/tmp/manager_ip
+swarm_manager_token: /var/tmp/swarm_manager_token
+swarm_worker_token: /var/tmp/swarm_worker_token

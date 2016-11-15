@@ -1,0 +1,38 @@
+---
+  # This tasklist will ensure that the docker runtime is installed properly on the target machine
+  # The machine is expected to be running ubuntu
+
+  # Prerequisite packages
+  - name: Ensure ca-certificates is installed
+    apt: name=ca-certificates update_cache=yes state=present
+
+  - name: Download puppet deb file
+    get_url:
+      url: https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+      dest: /opt/puppetlabs-release-pc1-trusty.deb
+      validate_certs: no
+      owner: root
+      timeout: 3000
+
+
+  - name: Ensure puppet 4 is installed
+    apt: deb="/opt/puppetlabs-release-pc1-trusty.deb" update_cache=yes state=present
+
+  - name: Ensure key for foreman repo is present
+    apt_key: url="https://deb.theforeman.org/pubkey.gpg" state=present
+
+  - name: Ensure foreman repo present
+    apt_repository: repo="deb http://deb.theforeman.org/ trusty 1.13" filename="foreman-repo" state=present
+
+  - name: Ensure foreman plugin repo present
+    apt_repository: repo="deb http://deb.theforeman.org/ plugins 1.13" filename="foreman-plugins-repo" state=present update_cache=yes
+
+  #Install foreman installer
+  - name: Ensure foreman-installer is present
+    apt: name="foreman-installer" state=present update_cache=yes
+
+  - name: Run the foreman installer
+    command: foreman-installer #--enable-foreman-plugin-salt --enable-foreman-proxy-plugin-salt
+    register: foreman-installer-facts
+
+  - debug: msg="{{foreman-installer-facts}}"

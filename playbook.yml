@@ -1,0 +1,8 @@
+---
+  - name: Setup and configure foreman
+    hosts: localhost
+    gather_facts: True
+    connection: local
+    become: yes
+    roles:
+      - foreman
