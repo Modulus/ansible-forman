@@ -1,0 +1,9 @@
+server {
+  listen 8031 default_server;
+
+  server_name localhost;
+
+  location / {
+    proxy_pass http://{{ip}}:{{port}}
+  }
+}
