@@ -1,5 +1,5 @@
 ip: 127.0.0.1
 port: 80
-nginx_sites-available: /etc/nginx/sites-available
-nginx_sites-enabled: /etc/nginx/sites-enabled
-nginx_foreman_file: foreman.conf
+nginx_sites_available: /etc/nginx/sites_available
+nginx_sites_enabled: /etc/nginx/sites_enabled
+nginx_foreman_file: /etc/nginx/sites-available/foreman.conf

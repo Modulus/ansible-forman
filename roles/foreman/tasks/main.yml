@@ -32,4 +32,8 @@
     apt: name="foreman-installer" state=present update_cache=yes
 
   - name: Run the foreman installer
-    command: foreman-installer #--enable-foreman-plugin-salt --enable-foreman-proxy-plugin-salt
+    shell: foreman-installer #--enable-foreman-plugin-salt --enable-foreman-proxy-plugin-salt
+    register: foreman-facts
+    
+  - name: Debug foreman-installer run
+    debug: msg="{foreman-facts}"
