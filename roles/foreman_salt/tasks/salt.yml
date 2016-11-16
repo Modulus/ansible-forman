@@ -11,7 +11,7 @@
     template: src="master.j2" dest="{{master_config_folder}}/master.conf"
 
   - name: Add foreman.yaml to saltstack
-    template: src="foreman.j2" dest="{{master_config_folder}}/foreman.yaml"
+    template: src="foreman.j2" dest="{{salt_folder}}/foreman.yaml"
     register: foreman_yaml_facts
   - debug: msg="{{foreman_yaml_facts}}"
 
