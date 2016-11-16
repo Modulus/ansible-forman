@@ -38,6 +38,13 @@ return:
   token: 6fd812929febdeda24e2731517d01d1f14994137
   user: bob    
 
+curl -sSk https://localhost:9191 \
+     -H 'Accept: application/x-yaml' \
+     -H 'X-Auth-Token: 6fd812929febdeda24e2731517d01d1f14994137'\
+     -d client=local \
+     -d tgt='*' \
+     -d fun=test.ping
+
 *check /var/log/salt/master for errors*
 
 ### For generating new password
