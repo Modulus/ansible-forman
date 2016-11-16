@@ -5,3 +5,5 @@ minion_config_file: /etc/salt/minion
 ssl_dir: /etc/pki/tls/certs
 ssl_key: localhost.key
 ssl_cert: localhost.crt
+ssl_ca_dir: /etc/pki/ca
+ssl_file_name: localhost

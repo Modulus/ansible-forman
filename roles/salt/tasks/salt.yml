@@ -29,15 +29,23 @@
   #- name: Generated ssl key and certificate
   #  shell: openssl req -new -newkey rsa:4096 -days 3650  -nodes -x509 -subj "/C=NO/ST=Hordaland/L=Bergen/O=Dis/CN=www.tull.no" -keyout "{{ssl_dir}}/{{ssl_key}}"  -out "{{ssl_dir}}/{{ssl_cert}}"
 
-  - name: Generate ssl key and certificate using salt
-    shell: salt-call --local tls.create_self_signed_cert
+  #- name: Generate ssl key and certificate using salt
+  #  shell: salt-call --local tls.create_self_signed_cert
 
+  - name: Generate tls CA with saltstack
+    shell: salt-call --local tls.create_ca "{{ssl_file_name}}"
+
+  - name: Generate tls private key with saltstack
+    shell: salt-call --local tls.create_csr "{{ssl_file_name}}"
+
+  - name: Create tls ca signed cert with saltstack
+    shell: salt-call --local tls.create_ca_signed_cert "{{ssl_file_name}}" "{{ssl_file_name}}"
 
   - name: Configure salt-minion
     template: src="minion.j2" dest="{{minion_config_file}}"
 
   - name: Configure hashing of salt-master
-    template: src="hashing.j2" dest="{{master_config_folder}}/hash.conf"  
+    template: src="hashing.j2" dest="{{master_config_folder}}/hash.conf"
 
   - name: Configure salt-api
     template: src="api.conf.j2" dest="{{master_config_folder}}/api.conf"

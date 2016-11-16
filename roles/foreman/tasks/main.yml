@@ -29,7 +29,7 @@
 
   #Install foreman installer
   - name: Ensure foreman-installer is present
-    apt: name="foreman-installer" state=present update_cache=yes
+    apt: name="foreman-installer" state=present
 
   - name: Run the foreman installer
     shell: foreman-installer  --enable-foreman-plugin-tasks --enable-foreman-proxy --enable-foreman-plugin-salt --enable-foreman-proxy-plugin-salt

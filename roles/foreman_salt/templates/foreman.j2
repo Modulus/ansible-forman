@@ -4,8 +4,8 @@
 :port: 443
 # if using http with ssl certificates
 :ssl_ca: "/var/lib/puppet/ssl/certs/ca.pem"
-:ssl_cert: "/var/lib/puppet/ssl/private_keys/foreman.example.com.pem"
-:ssl_key: "/var/lib/puppet/ssl/certs/foreman.example.com.pem"
+:ssl_cert: "{{ssl_dir}}/{{ssl_cert}}"
+:ssl_key: "{{ssl_dir}}/{{ssl_key}}"
 # if using http with username and password instead of https with certicates
 #:username: admin
 #:password: changeme
