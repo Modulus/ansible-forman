@@ -23,4 +23,25 @@ curl -sSk https://localhost:9191/login \
     -H 'Accept: application/x-yaml' \
     -d username=bob \
     -d password=bob \
-    -d eauth=auto
+    -d eauth=pam
+
+You should get a return message that looks something like this:
+return:
+- eauth: pam
+  expire: 1479337165.176836
+  perms:
+  - '@runner'
+  - '@wheel'
+  - '@jobs'
+  - test.*
+  start: 1479293965.176831
+  token: 6fd812929febdeda24e2731517d01d1f14994137
+  user: bob    
+
+*check /var/log/salt/master for errors*
+
+### For generating new password
++ Make sure you have the "whois" package installed
+..* sudo apt-get install whois
++ Run mkpasswd --method=sha-512
++ Paste the result into roles/salt/tasks/users.yml

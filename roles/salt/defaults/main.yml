@@ -1,6 +1,9 @@
-ssl_dir: /var/ssl
-ssl_key: salt.key
-ssl_cert: salt.crt
+#ssl_dir: /var/ssl
+#ssl_key: salt.key
+#ssl_cert: salt.crt
+ssl_dir: /etc/pki/tls/certs
+ssl_key: localhost.key
+ssl_cert: localhost.crt
 minion_config_file: /etc/salt/minion
 master_config_folder: /etc/salt/master.d
 api_user: bob
