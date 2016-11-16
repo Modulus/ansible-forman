@@ -2,3 +2,7 @@ master: localhost
 id: master
 hash_type: sha512
 ca.cert_base_path: '/etc/pki'
+grains:
+  roles:
+    - master
+    - api
