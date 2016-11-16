@@ -12,6 +12,8 @@
 
   - name: Add foreman.yaml to saltstack
     template: src="foreman.j2" dest="{{master_config_folder}}/foreman.yaml"
+    register: foreman_yaml_facts
+  - debug: msg="{{foreman_yaml_facts}}"
 
   - name: Add salt.yml to foreman-proxy
     template: src="salt.j2" dest="{{foreman_salt_config_file}}"
