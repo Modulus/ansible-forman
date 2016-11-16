@@ -6,4 +6,5 @@ ssl_dir: /etc/pki/localhost/certs
 ssl_key: localhost.key
 ssl_cert: localhost.crt
 ssl_ca_dir: /etc/pki/ca
+ssl_ca_file: /etc/pki/localhost_ca_cert.key
 ssl_file_name: localhost

@@ -1,9 +1,11 @@
 ---
+# /etc/salt/foreman.yaml
+
 :proto: https
-:host: foreman.example.com
+:host: localhost
 :port: 443
 # if using http with ssl certificates
-:ssl_ca: "/var/lib/puppet/ssl/certs/ca.pem"
+:ssl_ca: "{{ssl_ca_file}}"
 :ssl_cert: "{{ssl_dir}}/{{ssl_cert}}"
 :ssl_key: "{{ssl_dir}}/{{ssl_key}}"
 # if using http with username and password instead of https with certicates

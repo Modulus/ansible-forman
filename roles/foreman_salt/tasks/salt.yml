@@ -10,6 +10,12 @@
   - name: Add salt-master config for foreman
     template: src="master.j2" dest="{{master_config_folder}}/master.conf"
 
+  - name: Add foreman.yaml to saltstack
+    template: src="foreman.j2" dest="{{master_config_folder}}/foreman.yaml"
+
+  - name: Add salt.yml to foreman-proxy
+    template: src="salt.j2" dest="{{foreman_salt_config_file}}"
+
   - name: Restart salt-master to trigger new configuration
     service: enabled=yes name=salt-master state=restarted
 

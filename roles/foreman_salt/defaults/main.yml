@@ -1,0 +1,1 @@
+foreman_salt_config_file: /etc/foreman-proxy/settings.d/salt.yml
