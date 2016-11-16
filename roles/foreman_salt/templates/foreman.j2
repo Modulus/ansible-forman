@@ -2,12 +2,12 @@
 # /etc/salt/foreman.yaml
 
 :proto: https
-:host: localhost
+:host: {{ansible_fqdn}}
 :port: 443
 # if using http with ssl certificates
-:ssl_ca: "{{ssl_ca_file}}"
-:ssl_cert: "{{ssl_dir}}/{{ssl_cert}}"
-:ssl_key: "{{ssl_dir}}/{{ssl_key}}"
+:ssl_ca: {{ssl_ca_file}}
+:ssl_cert: {{ssl_dir}}/{{ssl_cert}}
+:ssl_key: {{ssl_dir}}/{{ssl_key}}
 # if using http with username and password instead of https with certicates
 #:username: admin
 #:password: changeme
