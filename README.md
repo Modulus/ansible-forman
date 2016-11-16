@@ -17,7 +17,7 @@ Access 192.168.89.21:8031 for foreman dashboard
 6. change inventory folder in ansible.cfg
 7. ansible-playbook playbook.yml
 
-### This playbook also install and configures the following
+## This playbook also install and configures the following
 1. salt-master
 2. salt-minion
 3. salt-api
