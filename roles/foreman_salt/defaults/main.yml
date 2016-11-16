@@ -1,0 +1,2 @@
+autosign_file: /etc/salt/autosign.conf
+master_config_folder: /etc/salt/master.d

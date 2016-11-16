@@ -1,0 +1,26 @@
+---
+  - name: Ensure autosign.conf file is present
+    file:
+      path: "{{autosign_file}}"
+      group: foreman-proxy
+      state: touch
+      mode:
+        0740
+
+  - name: Add salt-master config for foreman
+    template: src="master.j2" dest="{{master_config_folder}}/master.conf"
+
+  - name: Restart salt-master to trigger new configuration
+    service: enabled=yes name=salt-master state=restarted
+
+  - name: Restart salt-api to trigger new configuration
+    service: enabled=yes name=salt-master state=restarted
+
+  - name: Restart foreman to trigger new configuration
+    service: enabled=yes name=foreman state=restarted
+
+  - name: Restart foreman-proxy to trigger new configuration
+    service: enabled=yes name=foreman-proxy state=restarted
+
+  - name: Restart foreman-tasks to trigger new configuration
+    service: enabled=yes name=foreman-tasks state=restarted

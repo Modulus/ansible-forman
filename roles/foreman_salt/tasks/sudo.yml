@@ -1,0 +1,15 @@
+---
+  - name: Append Cmnd_Alias to sudoers file
+    action: 'lineinfile
+      dest=/etc/sudoers
+      line="Cmnd_Alias SALT = /usr/bin/salt, /usr/bin/salt-key"'
+
+  - name: Append foreman-proxy to sudoers file
+    action: 'lineinfile
+      dest=/etc/sudoers
+      line="foreman-proxy ALL = NOPASSWD: SALT"'
+
+  - name: Append Defaults to sudoers file
+    action: 'lineinfile
+      dest=/etc/sudoers
+      line="Defaults:foreman-proxy !requiretty"'

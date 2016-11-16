@@ -8,3 +8,4 @@
       - foreman
       - webserver
       - salt
+      - foreman_salt
