@@ -1,8 +1,7 @@
 nginx_home: /etc/nginx/
 autosign_file: /etc/salt/autosign.conf
 master_config_folder: /etc/salt/master.d
+minion_config_file: /etc/salt/minion
 ssl_dir: /etc/pki/tls/certs
 ssl_key: localhost.key
 ssl_cert: localhost.crt
-minion_config_file: /etc/salt/minion
-master_config_folder: /etc/salt/master.d
