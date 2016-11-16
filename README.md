@@ -52,3 +52,9 @@ curl -sSk https://localhost:9191 \
 ..* sudo apt-get install whois
 + Run mkpasswd --method=sha-512
 + Paste the result into roles/salt/tasks/users.yml
+
+### This setup will also install saltstack for local usage
++ Installs and configures
+..* salt-msater
+..* salt-minion
+..* salt-api
