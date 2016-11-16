@@ -48,13 +48,13 @@ curl -sSk https://localhost:9191 \
 *check /var/log/salt/master for errors*
 
 ### For generating new password
-+ Make sure you have the "whois" package installed
+1. Make sure you have the "whois" package installed
 ..* sudo apt-get install whois
-+ Run mkpasswd --method=sha-512
-+ Paste the result into roles/salt/tasks/users.yml
+2. Run mkpasswd --method=sha-512
+3. Paste the result into roles/salt/tasks/users.yml
 
 ### This setup will also install saltstack for local usage
-+ Installs and configures
+1. Installs and configures
 ..* salt-msater
 ..* salt-minion
 ..* salt-api
