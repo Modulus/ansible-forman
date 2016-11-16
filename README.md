@@ -17,6 +17,10 @@ Access 192.168.89.21:8031 for foreman dashboard
 6. change inventory folder in ansible.cfg
 7. ansible-playbook playbook.yml
 
+### This playbook also install and configures the following
+1. salt-master
+2. salt-minion
+3. salt-api
 
 ## Verify salt-api:
 curl -sSk https://localhost:9191/login \
@@ -52,9 +56,3 @@ curl -sSk https://localhost:9191 \
 *sudo apt-get install whois*
 2. Run mkpasswd --method=sha-512
 3. Paste the result into roles/salt/tasks/users.yml
-
-### This setup will also install saltstack for local usage
-*Installs and configures*
-1. salt-master
-2. salt-minion
-3. salt-api
