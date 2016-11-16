@@ -1,6 +1,6 @@
 ---
   - name: Setup and configure foreman
-    hosts: localhost
+    hosts: controller
     gather_facts: True
     connection: local
     become: yes
