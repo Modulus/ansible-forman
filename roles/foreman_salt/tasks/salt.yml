@@ -21,6 +21,3 @@
 
   - name: Restart foreman-proxy to trigger new configuration
     service: enabled=yes name=foreman-proxy state=restarted
-
-  - name: Restart foreman-tasks to trigger new configuration
-    service: enabled=yes name=foreman-tasks state=restarted
