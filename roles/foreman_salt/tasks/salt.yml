@@ -5,7 +5,7 @@
       group: foreman-proxy
       state: touch
       mode:
-        0740
+        0770
 
   - name: Add salt-master config for foreman
     template: src="master.j2" dest="{{master_config_folder}}/master.conf"
