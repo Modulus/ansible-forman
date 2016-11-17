@@ -27,7 +27,7 @@
   - name: Append port to /etc/salt/foreman.yaml
     action: 'lineinfile
       dest="{{puppet_foreman_yml}}"
-      line=":port: 8443"'
+      line=":port: 443"'
 
   - name: Append host to /etc/salt/foreman.yaml
     action: 'lineinfile
