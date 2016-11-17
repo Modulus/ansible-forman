@@ -6,6 +6,5 @@
     become: yes
     roles:
       - foreman
-      - webserver
       - salt
       - foreman_salt
