@@ -9,3 +9,5 @@ ssl_cert: localhost.crt
 ssl_ca_dir: /etc/pki/ca
 ssl_ca_file: /etc/pki/localhost_ca_cert.key
 ssl_file_name: localhost
+puppet_ssl_cert: /etc/puppetlabs/puppet/ssl/certs/{{ansible_fqdn}}.pem
+puppet_ssl_key: /etc/puppetlabs/puppet/ssl/private_keys/{{ansible_fqdn}}.pem
