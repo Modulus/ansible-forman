@@ -7,6 +7,9 @@
       mode:
         0770
 
+  - name: Ensure foreman.yaml file is not present in master.d folder
+    file: path="{{master_config_folder}}/foreman.yaml" state=absent
+
   - name: Add salt-master config for foreman
     template: src="master.j2" dest="{{master_config_folder}}/master.conf"
 
@@ -24,8 +27,8 @@
   - name: Restart salt-api to trigger new configuration
     service: enabled=yes name=salt-master state=restarted
 
-  - name: Restart foreman to trigger new configuration
-    service: enabled=yes name=foreman state=restarted
+  #- name: Restart foreman to trigger new configuration
+  #  service: enabled=yes name=foreman state=restarted
 
   - name: Restart foreman-proxy to trigger new configuration
     service: enabled=yes name=foreman-proxy state=restarted
