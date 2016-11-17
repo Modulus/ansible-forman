@@ -1,0 +1,30 @@
+---
+  - name: Append Cmnd_Alias to sudoers file
+    action: 'lineinfile
+      dest=/etc/sudoers
+      line="Cmnd_Alias SALT = /usr/bin/salt, /usr/bin/salt-key"'
+
+  - name: Append foreman-proxy to sudoers file
+    action: 'lineinfile
+      dest=/etc/sudoers
+      line="foreman-proxy ALL = NOPASSWD: SALT"'
+
+  - name: Append Defaults to sudoers file
+    action: 'lineinfile
+      dest=/etc/sudoers
+      line="Defaults:foreman-proxy !requiretty"'
+
+  - name: Append /usr/bin/salt to /etc/salt/foreman.yaml
+    action: 'lineinefile
+      dest="{{puppet_foreman_yml}}"
+      line=":salt: /usr/bin/salt"'
+
+  - name: Append upload_grains to /etc/salt/foreman.yaml
+    action: 'lineinefile
+      dest="{{puppet_foreman_yml}}"
+      line=":upload_grains: true"'
+      
+  - name: Append port to /etc/salt/foreman.yaml
+    action: 'lineinfile
+      dest="{{puppet_foreman_yml}}"
+      line=":port: 443"'
