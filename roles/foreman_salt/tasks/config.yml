@@ -15,15 +15,15 @@
       line="Defaults:foreman-proxy !requiretty"'
 
   - name: Append /usr/bin/salt to /etc/salt/foreman.yaml
-    action: 'lineinefile
+    action: 'lineinfile
       dest="{{puppet_foreman_yml}}"
       line=":salt: /usr/bin/salt"'
 
   - name: Append upload_grains to /etc/salt/foreman.yaml
-    action: 'lineinefile
+    action: 'lineinfile
       dest="{{puppet_foreman_yml}}"
       line=":upload_grains: true"'
-      
+
   - name: Append port to /etc/salt/foreman.yaml
     action: 'lineinfile
       dest="{{puppet_foreman_yml}}"
