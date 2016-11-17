@@ -32,7 +32,7 @@
     apt: name="foreman-installer" state=present
 
   - name: Run the foreman installer
-    shell: foreman-installer --enable-foreman-plugin-salt --enable-foreman-proxy-plugin-salt
+    shell: foreman-installer  --enable-foreman-plugin-discovery --enable-foreman-plugin-salt --enable-foreman-proxy-plugin-salt
     register: foreman_facts
 
   - name: Debug foreman-installer run
