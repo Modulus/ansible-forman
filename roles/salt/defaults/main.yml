@@ -1,3 +1,5 @@
 api_user: bob
 api_user_pass: $6$yti81KDE9DlMlB8$Lyr.6oqIPdiWozglJKaXtK2X4EXS44wHmVqKSCH1UWXeSxQnv0C0Id89T2HDlIldBVqBKv78suHj3OdLPyopz.
 foreman_proxy_user: foreman-proxy
+api_log_access_file: /var/log/salt/api/access.log
+api_error_file: /var/log/salt/api/error.log
