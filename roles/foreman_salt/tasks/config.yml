@@ -32,9 +32,9 @@
   - name: Append host to /etc/salt/foreman.yaml
     action: 'lineinfile
       dest="{{puppet_foreman_yml}}"
-      line:":host: {{ansible_fqdn}}"'
+      line=":host: {{ansible_fqdn}}"'
 
   - name: Append host to /etc/salt/foreman.yaml
     action: 'lineinfile
       dest="{{puppet_foreman_yml}}"
-      line:":proto: https"'    
+      line=":proto: https"'    
