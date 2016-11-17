@@ -1,1 +1,2 @@
 foreman_salt_config_file: /etc/foreman-proxy/settings.d/salt.yml
+puppet_foreman_yml: /etc/puppetlabs/puppet/foreman.yaml
