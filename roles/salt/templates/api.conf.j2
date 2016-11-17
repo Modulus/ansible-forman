@@ -7,6 +7,9 @@ external_auth:
       - test.*
     {{foreman_proxy_user}}:
       - '@runner'
+      - '@wheel'
+      - '@jobs'
+      - test.*
 
 rest_cherrypy:
   port: 9191
