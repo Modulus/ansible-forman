@@ -13,8 +13,12 @@
   - name: Add salt-master config for foreman
     template: src="master.j2" dest="{{master_config_folder}}/master.conf"
 
+  #- name: Add foreman.yaml to saltstack
+  #  file: src="{{puppet_foreman_yml}}" path="{{salt_folder}}/foreman.yaml" state=link force=yes group=foreman-proxy
+
   - name: Add foreman.yaml to saltstack
-    file: src="{{puppet_foreman_yml}}" path="{{salt_folder}}/foreman.yaml" state=link force=yes group=foreman-proxy
+    template: src="{{foreman.yaml.j2}}" dest="{{salt_folder}}/foreman.yaml" group=foreman-proxy  
+
     register: foreman_yaml_facts
   - debug: msg="{{foreman_yaml_facts}}"
 

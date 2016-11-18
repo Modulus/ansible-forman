@@ -1,0 +1,9 @@
+:proto: https
+:host: {{ansible_fqdn}}
+:port: 443
+:ssl_ca: /etc/puppetlabs/puppet/ssl/ca/ca_crt.pem
+:ssl_key: /etc/puppetlabs/puppet/ssl/private_keys/{{ansible_fqdn}}.pem
+:ssl_cert: /etc/puppetlabs/puppet/ssl/certs/{{ansible_fqdn}}.pem
+:timeout:  10
+:salt:  /usr/bin/salt
+:upload_grains:  true
