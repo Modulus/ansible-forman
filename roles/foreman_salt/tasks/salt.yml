@@ -27,8 +27,8 @@
   - name: Restart salt-api to trigger new configuration
     service: enabled=yes name=salt-master state=restarted
 
-  #- name: Restart foreman to trigger new configuration
-  #  service: enabled=yes name=foreman state=restarted
+  - name: Restart foreman-tasks to trigger new configuration
+    service: enabled=yes name=ruby-foreman-tasks state=restarted
 
   - name: Restart foreman-proxy to trigger new configuration
     service: enabled=yes name=foreman-proxy state=restarted
