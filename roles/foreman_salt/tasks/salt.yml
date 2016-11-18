@@ -17,7 +17,7 @@
   #  file: src="{{puppet_foreman_yml}}" path="{{salt_folder}}/foreman.yaml" state=link force=yes group=foreman-proxy
 
   - name: Add foreman.yaml to saltstack
-    template: src="{{foreman.yaml.j2}}" dest="{{salt_folder}}/foreman.yaml" group=foreman-proxy  
+    template: src="foreman.yaml.j2" dest="{{salt_folder}}/foreman.yaml" group=foreman-proxy  
 
     register: foreman_yaml_facts
   - debug: msg="{{foreman_yaml_facts}}"
