@@ -58,5 +58,6 @@ curl -sSk https://localhost:9191 \
 3. Paste the result into roles/salt/tasks/users.yml
 
 
-# errors
+# NB!!!!
 /usr/sbin/upload-salt-reports keeps failing. Python 2.7.11 is needed for this to work
+This probably means you are running a ubuntu version lower than 16.04

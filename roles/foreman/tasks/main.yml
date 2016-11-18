@@ -17,17 +17,20 @@
 
   # Ignore errors is set to yes, because this will fail if puppet is upgraded
   - name: Ensure puppet 4 is installed
-    apt: deb="/opt/puppetlabs-release-pc1-trusty.deb" update_cache=yes state=present
+    apt: deb="/opt/puppetlabs-release-pc1-{{ansible_distribution_release}}.deb" update_cache=yes state=present
     when: facter_puppetversion is not defined
 
   - name: Ensure key for foreman repo is present
     apt_key: url="https://deb.theforeman.org/pubkey.gpg" state=present
 
   - name: Ensure foreman repo present
-    apt_repository: repo="deb http://deb.theforeman.org/ trusty 1.13" filename="foreman-repo" state=present
+    apt_repository: repo="deb http://deb.theforeman.org/ {{ansible_distribution_release}} 1.13" filename="foreman-repo" state=present
 
   - name: Ensure foreman plugin repo present
     apt_repository: repo="deb http://deb.theforeman.org/ plugins 1.13" filename="foreman-plugins-repo" state=present update_cache=yes
+
+  #- name: Ensure ruby-kafo is installed
+  #  apt: name=ruby-kafo state=present
 
   #Install foreman installer
   - name: Ensure foreman-installer is present
