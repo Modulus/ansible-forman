@@ -15,8 +15,10 @@
       timeout: 3000
 
 
+  # Ignore errors is set to yes, because this will fail if puppet is upgraded
   - name: Ensure puppet 4 is installed
     apt: deb="/opt/puppetlabs-release-pc1-trusty.deb" update_cache=yes state=present
+    ignore_errors: yes
 
   - name: Ensure key for foreman repo is present
     apt_key: url="https://deb.theforeman.org/pubkey.gpg" state=present
