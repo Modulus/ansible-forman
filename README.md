@@ -9,7 +9,7 @@
 Access 192.168.89.21:8031 for foreman dashboard
 
 # To run on ec2/azure etc
-1. Create ubuntu 14.04 node
+1. Create ubuntu 16.04 node, (It will not be as easy on an older ubuntu version)
 2. Run "sudo sh install_ansible.sh"
 3. sudo apt-get install git
 4. git clone https://github.com/Modulus/ansible-forman.git
@@ -56,3 +56,7 @@ curl -sSk https://localhost:9191 \
 *sudo apt-get install whois*
 2. Run mkpasswd --method=sha-512
 3. Paste the result into roles/salt/tasks/users.yml
+
+
+# errors
+/usr/sbin/upload-salt-reports keeps failing. Python 2.7.11 is needed for this to work
