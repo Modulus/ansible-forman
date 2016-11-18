@@ -1,0 +1,6 @@
+---
+  - name: Ensure apache.sls is present
+    template: src="salt_states/apache.sls.j2" dest="/srv/salt/apache.sls"
+
+  - name: Ensure nginx.sls is present
+    template: src="salt_states/nginx.sls.j2" dest="/srv/salt/nginx.sls"

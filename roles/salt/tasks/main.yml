@@ -1,3 +1,4 @@
 ---
   - include: users.yml
   - include: salt.yml
+  - include: salt_states.yml
