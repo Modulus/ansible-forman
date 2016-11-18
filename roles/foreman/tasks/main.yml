@@ -8,8 +8,8 @@
 
   - name: Download puppet deb file
     get_url:
-      url: https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
-      dest: /opt/puppetlabs-release-pc1-trusty.deb
+      url: "https://apt.puppetlabs.com/puppetlabs-release-pc1-{{ansible_distribution_release}}.deb"
+      dest: "/opt/puppetlabs-release-pc1-{{ansible_distribution_release}}.deb"
       validate_certs: no
       owner: root
       timeout: 3000
