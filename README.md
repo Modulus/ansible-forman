@@ -61,3 +61,6 @@ curl -sSk https://localhost:9191 \
 # NB!!!!
 /usr/sbin/upload-salt-reports keeps failing. Python 2.7.11 is needed for this to work
 This probably means you are running a ubuntu version lower than 16.04
+
+Also you need to change the minion id to the fqdn using sudo salt-cloud -a rename oldname newname=newname
+You also need to change this in the /etc/salt/minion file....
