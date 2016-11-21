@@ -7,3 +7,9 @@ ext_pillar:
   - puppet: /usr/bin/foreman-node
 
 autosign_file: /etc/salt/autosign.conf
+
+publisher_acl:
+  bob:
+    - *:
+      - test.*
+      - pkg.list_pkgs
