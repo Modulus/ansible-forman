@@ -1,0 +1,11 @@
+---
+  - name: Ensure plugin directory exists
+    file: path="{{callback_plugin_dest}}" state=directory
+
+  - name: Ensure foreman_callback.py is present
+    get_url:
+      url: "{{callback_plugin_url}}"
+      dest: "{{callback_plugin_dest}}"
+
+  - name: Ensure rubygem foreman ansible is installed
+    apt: name=rubygem-foreman_ansible state=present

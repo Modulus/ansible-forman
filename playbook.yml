@@ -8,3 +8,4 @@
       - foreman
       - salt
       - foreman_salt
+      - foreman_ansible
