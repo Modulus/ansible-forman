@@ -14,4 +14,4 @@
     apt: name=ansible state=present
 
   - name: Ensure rubygem foreman ansible is installed
-    apt: name=rubygem-foreman_ansible state=present
+    apt: name=ruby-foreman_ansible state=present
