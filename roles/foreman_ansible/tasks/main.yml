@@ -8,7 +8,7 @@
       dest: "{{callback_plugin_dest}}"
 
   - name: Ensure ansible ppa repo is present
-    apt: repo=" ppa:ansible/ansible" updsate_cache=yes
+    apt: repo="ppa:ansible/ansible" updsate_cache=yes
 
   - name: Ensure ansible is installed
     apt: name=ansible state=present
