@@ -14,6 +14,26 @@
       dest=/etc/sudoers
       line="Defaults:foreman-proxy !requiretty"'
 
+  # required for publisher_acl in salt
+  - name: Make /var/cache/salt readable to all
+    file: path="/var/cache/salt" state=directory mode="0755"
+    
+  # required for publisher_acl in salt
+  - name: Make /var/cache/salt readable to all
+    file: path="/var/cache/salt/master" state=directory mode="0755"
+
+  # required for publisher_acl in salt
+  - name: Make /var/cache/salt readable to all
+    file: path="/var/cache/salt/master/jobs" state=directory mode="0755"
+
+  # required for publisher_acl in salt
+  - name: Make /var/cache/salt readable to all
+    file: path="/var/run/salt" state=directory mode="0755"
+
+  # required for publisher_acl in salt
+  - name: Make /var/cache/salt readable to all
+    file: path="/var/run/salt/master" state=directory mode="0755"
+
   #- name: Append /usr/bin/salt to /etc/salt/foreman.yaml
   #  action: 'lineinfile
   #    dest="{{puppet_foreman_yml}}"
